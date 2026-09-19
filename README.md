@@ -1,64 +1,72 @@
-# E-Commerce Data Engineering & Analytics Pipeline
+# 🛒 E-Commerce Data Engineering & Analytics Pipeline
 
-An end-to-end E-Commerce Data Engineering project that demonstrates how raw CSV data can be extracted, loaded into PostgreSQL, transformed using SQL, analyzed, and exposed through a Flask API and web dashboard.
+An end-to-end E-Commerce Data Engineering project that demonstrates how raw e-commerce data can be processed, stored, transformed, analyzed, and exposed through a Flask API and web dashboard.
 
-## 📌 Project Overview
+The project starts with CSV files and builds a complete data flow using Python, PostgreSQL, SQL, Docker, Flask, HTML, and CSS.
 
-This project simulates an e-commerce data platform using customer, product, order, and order item data.
+---
 
-The pipeline currently follows this flow:
+# 📌 Project Overview
 
-```text
-CSV Source Data
-      ↓
-Python ETL
-      ↓
-PostgreSQL
-      ↓
-SQL Transformations
-      ↓
-SQL Analytics
-      ↓
-Flask API
-      ↓
-Web Dashboard
-```
+The main objective of this project is to build a practical E-Commerce data pipeline.
 
-The project is designed as a portfolio project to demonstrate practical Data Engineering skills including:
+The pipeline processes:
 
-- Python
-- Pandas
-- PostgreSQL
-- SQL
-- Docker
-- Flask
-- REST APIs
-- Data Transformation
-- Data Analytics
+- Customer data
+- Product data
+- Order data
+- Order item data
+
+The processed data is stored in PostgreSQL and transformed using SQL to generate business analytics.
+
+A Flask backend exposes the analytics through API endpoints, and a web dashboard displays the results.
 
 ---
 
 # 🏗️ Project Architecture
 
 ```text
-                E-Commerce CSV Files
-                         │
-                         ▼
-                  Python ETL
-                         │
-                         ▼
-                PostgreSQL Database
-                         │
-              ┌──────────┴──────────┐
-              ▼                     ▼
-        SQL Transformations     SQL Analytics
-              │                     │
-              └──────────┬──────────┘
-                         ▼
-                    Flask API
-                         │
-                         ▼
-                  Web Dashboard
+                    E-Commerce CSV Files
+                            │
+                            ▼
+                       Python ETL
+                            │
+                            ▼
+                     PostgreSQL
+                            │
+                 ┌──────────┴──────────┐
+                 │                     │
+                 ▼                     ▼
+          SQL Transformations    SQL Analytics
+                 │                     │
+                 └──────────┬──────────┘
+                            ▼
+                       Flask API
+                            │
+                            ▼
+                     Web Dashboard
+```
+
+### Data Flow
+
+```text
+CSV
+ ↓
+Extract
+ ↓
+Process
+ ↓
+Load
+ ↓
+PostgreSQL
+ ↓
+Transform
+ ↓
+Analytics
+ ↓
+Flask API
+ ↓
+Dashboard
 ```
 
 ---
@@ -68,14 +76,15 @@ The project is designed as a portfolio project to demonstrate practical Data Eng
 | Technology | Purpose |
 |---|---|
 | Python | ETL and backend development |
-| Pandas | CSV data processing |
-| PostgreSQL | Relational database |
-| SQL | Data transformation and analytics |
-| Docker | PostgreSQL container |
-| Flask | Backend API |
+| Pandas | CSV processing |
+| PostgreSQL | Data storage |
+| SQL | Transformation and analytics |
+| Docker | PostgreSQL containerization |
+| Flask | REST API and backend |
 | HTML | Dashboard structure |
 | CSS | Dashboard styling |
-| Git/GitHub | Version control and project hosting |
+| Git | Version control |
+| GitHub | Project repository |
 
 ---
 
@@ -103,6 +112,8 @@ ecommerce-data-pipeline/
 ├── templates/
 │   └── dashboard.html
 │
+├── screenshots/
+│
 ├── app.py
 ├── docker-compose.yml
 ├── requirements.txt
@@ -112,78 +123,103 @@ ecommerce-data-pipeline/
 
 ---
 
-# 🚀 Project Development Steps
+# 🚀 Project Development Process
 
-## 1. Project Setup
+## 1️⃣ Project Setup
 
-Created the initial project structure for the E-Commerce Data Engineering pipeline.
+The project was started by creating a structured folder architecture for the E-Commerce Data Engineering pipeline.
 
 The project separates:
 
 - Source data
-- Python ETL scripts
+- ETL scripts
 - SQL scripts
-- Flask application
+- Flask backend
 - Frontend files
 - Docker configuration
+- Documentation screenshots
+
+### Project Structure
+
+![Project Structure](screenshots/01-project-structure.png)
 
 ---
 
-## 2. Python Virtual Environment
+# 2️⃣ Python Virtual Environment
 
-Created a Python virtual environment to isolate the project dependencies.
+A Python virtual environment was created to isolate project dependencies.
+
+### Create virtual environment
 
 ```powershell
 python -m venv venv
 ```
 
-Activated the virtual environment:
+### Activate environment
 
 ```powershell
 venv\Scripts\activate
 ```
 
+This ensures that project dependencies do not interfere with the system Python installation.
+
+### Screenshot
+
+![Python Virtual Environment](screenshots/02-python-environment.png)
+
 ---
 
-## 3. Installed Python Dependencies
+# 3️⃣ Install Python Dependencies
 
-Installed the main Python libraries required for the project.
+The project uses Python libraries for data processing, PostgreSQL connectivity, and the Flask backend.
+
+Installed packages:
 
 ```powershell
 pip install pandas psycopg2-binary flask
 ```
 
-Dependencies are stored in:
+Main libraries:
 
-[requirements.txt](requirements.txt)
+- `pandas`
+- `psycopg2-binary`
+- `flask`
+
+### Requirements
+
+[View requirements.txt](requirements.txt)
 
 ---
 
-# 🐳 4. Docker Setup
+# 4️⃣ Docker and WSL2 Setup
 
-Docker Desktop was configured with WSL2 on Windows.
+Docker Desktop was configured on Windows with WSL2 support.
 
-Docker is used to run PostgreSQL in a containerized environment.
+Docker is used to run PostgreSQL in a container instead of installing PostgreSQL directly on Windows.
 
-Verified Docker:
+### Verify Docker
 
 ```powershell
 docker --version
 ```
 
-Verified Docker Compose:
+### Verify Docker Compose
 
 ```powershell
 docker compose version
 ```
 
+### Screenshot
+
+![Docker Setup](screenshots/03-docker.png)
+
 ---
 
-# 🗄️ 5. PostgreSQL Setup
+# 5️⃣ PostgreSQL Setup Using Docker
 
 PostgreSQL was configured using Docker Compose.
 
-PostgreSQL configuration:
+Database configuration:
 
 ```text
 Database: ecommerce_db
@@ -191,79 +227,93 @@ User: ecommerce_user
 Port: 5432
 ```
 
-Docker configuration:
-
-[docker-compose.yml](docker-compose.yml)
-
-Start PostgreSQL:
+### Start PostgreSQL
 
 ```powershell
 docker compose up -d
 ```
 
-Check the running container:
+### Check container
 
 ```powershell
 docker ps
 ```
 
+### Docker Configuration
+
+[View docker-compose.yml](docker-compose.yml)
+
+### Screenshot
+
+![PostgreSQL Docker](screenshots/04-postgresql.png)
+
 ---
 
-# 📊 6. Created Source E-Commerce Data
+# 6️⃣ Create E-Commerce Source Data
 
-Created four CSV files representing different entities in an e-commerce system.
+Four CSV files were created as the source data for the pipeline.
 
-### Customers
+## Customers
 
-[data/customers.csv](data/customers.csv)
-
-Contains:
+The customer dataset contains:
 
 - Customer ID
-- First Name
-- Last Name
+- First name
+- Last name
 - Email
 - Country
 
-### Products
-
-[data/products.csv](data/products.csv)
-
-Contains:
-
-- Product ID
-- Product Name
-- Category
-- Price
-
-### Orders
-
-[data/orders.csv](data/orders.csv)
-
-Contains:
-
-- Order ID
-- Customer ID
-- Order Date
-- Order Status
-
-### Order Items
-
-[data/order_items.csv](data/order_items.csv)
-
-Contains:
-
-- Order Item ID
-- Order ID
-- Product ID
-- Quantity
-- Unit Price
+[View customers.csv](data/customers.csv)
 
 ---
 
-# 🗃️ 7. PostgreSQL Database Schema
+## Products
 
-Created a relational database schema to store the e-commerce data.
+The product dataset contains:
+
+- Product ID
+- Product name
+- Category
+- Price
+
+[View products.csv](data/products.csv)
+
+---
+
+## Orders
+
+The order dataset contains:
+
+- Order ID
+- Customer ID
+- Order date
+- Order status
+
+[View orders.csv](data/orders.csv)
+
+---
+
+## Order Items
+
+The order item dataset contains:
+
+- Order item ID
+- Order ID
+- Product ID
+- Quantity
+- Unit price
+
+[View order_items.csv](data/order_items.csv)
+
+### Source Data Screenshot
+
+![Source Data](screenshots/06-source-data.png)
+
+---
+
+# 7️⃣ PostgreSQL Database Schema
+
+A relational database schema was created to store the e-commerce data.
 
 The database contains four main tables:
 
@@ -274,49 +324,90 @@ fact_orders
 fact_order_items
 ```
 
-The schema includes:
+### Table Relationships
+
+```text
+dim_customer
+      │
+      │ customer_id
+      ▼
+fact_orders
+      │
+      │ order_id
+      ▼
+fact_order_items
+      │
+      │ product_id
+      ▼
+dim_product
+```
+
+The schema uses:
 
 - Primary keys
 - Foreign keys
-- Data types
-- Constraints
-- Relationships between tables
+- NOT NULL constraints
+- UNIQUE constraints
+- Relationships between fact and dimension tables
 
-Database schema:
+### SQL Code
 
-[sql/schema.sql](sql/schema.sql)
+[View Database Schema](sql/schema.sql)
+
+### Screenshot
+
+![Database Tables](screenshots/05-database-tables.png)
 
 ---
 
-# 🔄 8. Python ETL
+# 8️⃣ Python ETL
 
-Created a Python ETL script using Pandas and PostgreSQL.
+A Python ETL script was created using Pandas and PostgreSQL connectivity.
 
-The ETL process:
+The ETL process reads the CSV files and loads the data into PostgreSQL.
+
+### ETL Flow
 
 ```text
-CSV Files
-   ↓
+customers.csv
+products.csv
+orders.csv
+order_items.csv
+       │
+       ▼
+     Pandas
+       │
+       ▼
+ Data Processing
+       │
+       ▼
+   PostgreSQL
+```
+
+### Python ETL Code
+
+[View ETL Code](scripts/etl.py)
+
+### Main technologies
+
+```text
+Python
 Pandas
-   ↓
-Data Processing
-   ↓
+psycopg2
 PostgreSQL
 ```
 
-The ETL script reads the CSV files and loads the data into PostgreSQL.
+### Screenshot
 
-ETL code:
-
-[scripts/etl.py](scripts/etl.py)
+![Python ETL](screenshots/07-etl.png)
 
 ---
 
-# 📥 9. Load Data into PostgreSQL
+# 9️⃣ Load Data into PostgreSQL
 
-The processed data was loaded into PostgreSQL tables.
+The ETL script loads the CSV data into PostgreSQL.
 
-The loaded tables are:
+The target tables are:
 
 ```text
 dim_customer
@@ -325,33 +416,47 @@ fact_orders
 fact_order_items
 ```
 
-Data was verified directly inside PostgreSQL.
+The loaded data was verified using PostgreSQL.
+
+### Screenshot
+
+![Loaded PostgreSQL Data](screenshots/08-loaded-data.png)
 
 ---
 
-# 🔧 10. SQL Transformations
+# 🔟 SQL Transformations
 
-Created SQL transformations to calculate order totals.
+After loading the raw data, SQL transformations were created.
 
-For order revenue:
+Order revenue is calculated using:
 
-```sql
-quantity * unit_price
+```text
+quantity × unit_price
 ```
 
-The order totals are calculated from the order item data.
+For example:
 
-SQL transformation and analytics:
+```text
+1 Laptop × ₹75,000
++
+1 Keyboard × ₹2,500
+=
+₹77,500
+```
 
-[sql/analytics.sql](sql/analytics.sql)
+The `fact_orders.total_amount` field is updated based on the order items.
+
+### SQL Code
+
+[View SQL Analytics and Transformations](sql/analytics.sql)
 
 ---
 
-# 📈 11. SQL Analytics
+# 1️⃣1️⃣ SQL Analytics
 
-Created analytical views to support business reporting.
+SQL views were created to generate business analytics.
 
-The project includes analytics for:
+The project currently includes:
 
 ### Analytics Summary
 
@@ -368,7 +473,7 @@ Calculates revenue by order date.
 
 ### Top Products
 
-Identifies products based on revenue.
+Analyzes product revenue.
 
 ### Revenue by Country
 
@@ -378,70 +483,53 @@ Analyzes revenue based on customer country.
 
 Analyzes customer-level spending.
 
-SQL analytics:
+### SQL Code
 
-[sql/analytics.sql](sql/analytics.sql)
+[View Analytics SQL](sql/analytics.sql)
+
+### Screenshot
+
+![SQL Analytics](screenshots/09-sql-analytics.png)
 
 ---
 
-# 📊 12. Business Analytics Verification
+# 1️⃣2️⃣ Business Analytics Verification
 
-The completed orders were used for revenue analysis.
+The analytics were verified using the PostgreSQL database.
 
-The project calculates revenue from:
+Completed orders are included in the revenue calculation.
 
-```text
-Quantity × Unit Price
-```
+Cancelled orders are excluded from completed-order revenue.
 
-Cancelled orders are excluded from completed-order revenue calculations.
-
-The current sample data produces completed-order revenue of:
+The current sample dataset produces:
 
 ```text
+Completed Order Revenue
 ₹101,900
 ```
 
----
-
-# 🌐 13. Flask Backend
-
-Created a Flask application to expose the PostgreSQL analytics through API endpoints.
-
-Backend:
-
-[app.py](app.py)
-
-Current API endpoints include:
+### Revenue Calculation
 
 ```text
-/api/summary
-/api/daily-revenue
-/api/top-products
-/api/revenue-by-country
-```
+Order 1001 = ₹77,500
+Order 1002 = ₹7,000
+Order 1004 = ₹2,400
+Order 1005 = ₹15,000
 
-The Flask application connects to PostgreSQL and returns analytics data.
+Total = ₹101,900
+```
 
 ---
 
-# 🖥️ 14. Web Dashboard
+# 1️⃣3️⃣ Flask Backend
 
-Created a web dashboard using:
+A Flask application was created to connect the PostgreSQL analytics layer with the web frontend.
 
-- HTML
-- CSS
-- Flask
+### Flask Application
 
-Dashboard template:
+[View app.py](app.py)
 
-[templates/dashboard.html](templates/dashboard.html)
-
-Dashboard styling:
-
-[static/style.css](static/style.css)
-
-The dashboard is designed to display e-commerce analytics retrieved from the Flask API.
+The Flask backend provides API endpoints for the dashboard.
 
 ---
 
@@ -449,31 +537,37 @@ The dashboard is designed to display e-commerce analytics retrieved from the Fla
 
 ## Summary
 
-```text
+```http
 GET /api/summary
 ```
 
-Returns high-level business metrics.
+Returns high-level e-commerce metrics.
+
+---
 
 ## Daily Revenue
 
-```text
+```http
 GET /api/daily-revenue
 ```
 
-Returns revenue by date.
+Returns revenue grouped by date.
+
+---
 
 ## Top Products
 
-```text
+```http
 GET /api/top-products
 ```
 
-Returns top-performing products.
+Returns product revenue information.
+
+---
 
 ## Revenue by Country
 
-```text
+```http
 GET /api/revenue-by-country
 ```
 
@@ -481,15 +575,33 @@ Returns revenue grouped by customer country.
 
 ---
 
+# 1️⃣4️⃣ Web Dashboard
+
+A web dashboard was created using Flask, HTML, and CSS.
+
+The dashboard communicates with the Flask API and displays the analytics.
+
+### Dashboard Template
+
+[View dashboard.html](templates/dashboard.html)
+
+### Dashboard CSS
+
+[View style.css](static/style.css)
+
+### Dashboard Screenshot
+
+![E-Commerce Dashboard](screenshots/11-dashboard.png)
+
+---
+
 # ▶️ How to Run the Project
 
-## Step 1: Clone the Repository
+## Step 1: Clone Repository
 
 ```bash
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 ```
-
-Move into the project:
 
 ```bash
 cd ecommerce-data-pipeline
@@ -503,7 +615,9 @@ cd ecommerce-data-pipeline
 python -m venv venv
 ```
 
-Activate:
+---
+
+## Step 3: Activate Virtual Environment
 
 ```powershell
 venv\Scripts\activate
@@ -511,7 +625,7 @@ venv\Scripts\activate
 
 ---
 
-## Step 3: Install Dependencies
+## Step 4: Install Dependencies
 
 ```powershell
 pip install -r requirements.txt
@@ -519,7 +633,7 @@ pip install -r requirements.txt
 
 ---
 
-## Step 4: Start PostgreSQL
+## Step 5: Start PostgreSQL
 
 ```powershell
 docker compose up -d
@@ -533,13 +647,13 @@ docker ps
 
 ---
 
-## Step 5: Start Flask Application
+## Step 6: Run Flask Application
 
 ```powershell
 python app.py
 ```
 
-Then open:
+Open the application:
 
 ```text
 http://127.0.0.1:5000
@@ -547,96 +661,113 @@ http://127.0.0.1:5000
 
 ---
 
-# 📌 Current Project Status
+# 📊 Current Project Status
 
-## Completed
+## ✅ Completed
 
 - [x] Project structure
-- [x] Python environment
+- [x] Python virtual environment
 - [x] Python dependencies
 - [x] Docker Desktop + WSL2
 - [x] PostgreSQL Docker container
-- [x] E-commerce CSV datasets
+- [x] E-commerce source CSV files
 - [x] PostgreSQL database schema
 - [x] Python ETL
 - [x] Data loading
 - [x] SQL transformations
 - [x] SQL analytics
+- [x] Analytics verification
 - [x] Flask backend
 - [x] Flask API endpoints
 - [x] Dashboard files
 
-## In Progress / Future Work
+## 🔄 Future Development
 
 - [ ] Separate `extract.py`
 - [ ] Separate `validate.py`
 - [ ] Separate `load.py`
 - [ ] Apache Airflow DAG
-- [ ] Airflow pipeline orchestration
+- [ ] Airflow orchestration
 - [ ] Data quality checks
 - [ ] Automated tests
 - [ ] Full application Dockerization
-- [ ] Final dashboard improvements
-- [ ] GitHub documentation and screenshots
+- [ ] Additional dashboard improvements
 
 ---
 
-# 🔮 Future Improvements
+# 🔮 Future Architecture
 
-The next phase of the project will focus on building a production-style data pipeline.
-
-Planned improvements:
+The planned final pipeline is:
 
 ```text
-Extract
-   ↓
-Validate
-   ↓
-Load
-   ↓
-Transform
-   ↓
-Data Quality Checks
-   ↓
-Analytics
-   ↓
-Flask API
-   ↓
-Dashboard
+             CSV / API
+                 │
+                 ▼
+              Extract
+                 │
+                 ▼
+             Validate
+                 │
+                 ▼
+               Load
+                 │
+                 ▼
+            PostgreSQL
+                 │
+                 ▼
+             Transform
+                 │
+                 ▼
+          Data Quality Check
+                 │
+                 ▼
+             Analytics
+                 │
+                 ▼
+             Flask API
+                 │
+                 ▼
+             Dashboard
 ```
 
-Future technologies/components:
-
-- Apache Airflow
-- Automated data quality checks
-- Pytest
-- Separate ETL modules
-- Dockerized Flask application
-- Improved dashboard visualizations
+Apache Airflow will eventually be used to orchestrate these pipeline steps.
 
 ---
 
 # 🎯 Project Goal
 
-The goal of this project is to demonstrate an end-to-end Data Engineering workflow starting from raw e-commerce data and progressing through:
+The goal of this project is to demonstrate an end-to-end Data Engineering workflow:
 
 ```text
+Raw Data
+   ↓
 Data Ingestion
-      ↓
+   ↓
 Data Processing
-      ↓
+   ↓
 Data Storage
-      ↓
+   ↓
 Data Transformation
-      ↓
+   ↓
 Data Analytics
-      ↓
-API Layer
-      ↓
+   ↓
+API
+   ↓
 Dashboard
 ```
 
-This project demonstrates practical experience with Python, SQL, PostgreSQL, Docker, Flask, ETL, and analytics.
+This project demonstrates practical experience with:
+
+- Python
+- Pandas
+- SQL
+- PostgreSQL
+- Docker
+- ETL
+- Flask
+- REST APIs
+- Data Analytics
+- GitHub
 
 ---
 
@@ -644,6 +775,6 @@ This project demonstrates practical experience with Python, SQL, PostgreSQL, Doc
 
 **Venkatesh**
 
-Data Engineer
+**Data Engineer**
 
 📍 Hyderabad, India
