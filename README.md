@@ -186,6 +186,8 @@ Main libraries:
 - `pandas`
 - `psycopg2-binary`
 - `flask
+## Requirements
+<img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/e56f1de3-e90e-4a8b-ac7a-f93167c7f50d" />
 
 
 ---
@@ -210,7 +212,7 @@ docker compose version
 
 ### Screenshot
 
-<img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/e56f1de3-e90e-4a8b-ac7a-f93167c7f50d" />
+<img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/90e2a608-9d2a-4c42-b3cb-f2d8c38ae93c" />
 
 
 ---
@@ -241,7 +243,7 @@ docker ps
 
 ### Docker Configuration
 
-<img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/90e2a608-9d2a-4c42-b3cb-f2d8c38ae93c" />
+
 
 ### Screenshot
 
