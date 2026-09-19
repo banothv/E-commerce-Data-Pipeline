@@ -141,7 +141,8 @@ The project separates:
 
 ### Project Structure
 
-![Project Structure](screenshots/01-project-structure.png)
+<img width="390" height="300" alt="01" src="https://github.com/user-attachments/assets/49ff683c-4711-4d8b-92d5-8794968b30eb" />
+
 
 ---
 
