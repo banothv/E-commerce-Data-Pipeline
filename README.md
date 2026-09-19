@@ -166,7 +166,8 @@ This ensures that project dependencies do not interfere with the system Python i
 
 ### Screenshot
 
-![Python Virtual Environment](screenshots/02-python-environment.png)
+<img width="1396" height="1127" alt="image" src="https://github.com/user-attachments/assets/f7912117-f707-4761-9006-f46eae4e10dc" />
+
 
 ---
 
@@ -184,11 +185,8 @@ Main libraries:
 
 - `pandas`
 - `psycopg2-binary`
-- `flask`
+- `flask
 
-### Requirements
-
-[View requirements.txt](requirements.txt)
 
 ---
 
@@ -212,7 +210,8 @@ docker compose version
 
 ### Screenshot
 
-![Docker Setup](screenshots/03-docker.png)
+<img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/e56f1de3-e90e-4a8b-ac7a-f93167c7f50d" />
+
 
 ---
 
@@ -242,7 +241,7 @@ docker ps
 
 ### Docker Configuration
 
-[View docker-compose.yml](docker-compose.yml)
+<img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/90e2a608-9d2a-4c42-b3cb-f2d8c38ae93c" />
 
 ### Screenshot
 
