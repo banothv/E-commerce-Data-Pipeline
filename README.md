@@ -141,7 +141,7 @@ The project separates:
 
 ### Project Structure
 
-<img width="390" height="300" alt="01" src="https://github.com/user-attachments/assets/49ff683c-4711-4d8b-92d5-8794968b30eb" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/860a29ed-69f3-40be-9032-6fedcfce7f69" />
 
 
 ---
