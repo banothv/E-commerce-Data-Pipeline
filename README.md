@@ -164,7 +164,6 @@ venv\Scripts\activate
 
 This ensures that project dependencies do not interfere with the system Python installation.
 
-### Screenshot
 
 <img width="1396" height="1127" alt="image" src="https://github.com/user-attachments/assets/f7912117-f707-4761-9006-f46eae4e10dc" />
 
@@ -187,6 +186,7 @@ Main libraries:
 - `psycopg2-binary`
 - `flask
 ## Requirements
+
 <img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/e56f1de3-e90e-4a8b-ac7a-f93167c7f50d" />
 
 
@@ -210,7 +210,6 @@ docker --version
 docker compose version
 ```
 
-### Screenshot
 
 <img width="1404" height="1120" alt="image" src="https://github.com/user-attachments/assets/90e2a608-9d2a-4c42-b3cb-f2d8c38ae93c" />
 
@@ -241,13 +240,10 @@ docker compose up -d
 docker ps
 ```
 
-### Docker Configuration
 
 
+<img width="1562" height="1007" alt="image" src="https://github.com/user-attachments/assets/e2551243-1b1a-4b3b-b04d-a8c7811e31f1" />
 
-### Screenshot
-
-![PostgreSQL Docker](screenshots/04-postgresql.png)
 
 ---
 
@@ -307,9 +303,9 @@ The order item dataset contains:
 
 [View order_items.csv](data/order_items.csv)
 
-### Source Data Screenshot
 
-![Source Data](screenshots/06-source-data.png)
+<img width="1548" height="1016" alt="image" src="https://github.com/user-attachments/assets/a8c1a4b2-60c0-4456-b264-18ff99f04743" />
+
 
 ---
 
@@ -356,9 +352,9 @@ The schema uses:
 
 [View Database Schema](sql/schema.sql)
 
-### Screenshot
 
-![Database Tables](screenshots/05-database-tables.png)
+<img width="1540" height="1021" alt="image" src="https://github.com/user-attachments/assets/4ae84e58-418b-4401-ae92-f7fd73d66846" />
+
 
 ---
 
@@ -399,9 +395,10 @@ psycopg2
 PostgreSQL
 ```
 
-### Screenshot
 
-![Python ETL](screenshots/07-etl.png)
+
+<img width="1526" height="1031" alt="image" src="https://github.com/user-attachments/assets/6b7f539e-a4e4-4615-8237-0baeff16ba30" />
+
 
 ---
 
@@ -420,9 +417,10 @@ fact_order_items
 
 The loaded data was verified using PostgreSQL.
 
-### Screenshot
 
-![Loaded PostgreSQL Data](screenshots/08-loaded-data.png)
+
+<img width="1728" height="910" alt="image" src="https://github.com/user-attachments/assets/e8edb8d9-4f39-4af2-836c-a7669ecbb8b6" />
+
 
 ---
 
@@ -453,6 +451,9 @@ The `fact_orders.total_amount` field is updated based on the order items.
 [View SQL Analytics and Transformations](sql/analytics.sql)
 
 ---
+
+
+<img width="1710" height="919" alt="image" src="https://github.com/user-attachments/assets/3c8f5f3e-099a-4ac0-894c-47d88642543d" />
 
 # 1️⃣1️⃣ SQL Analytics
 
@@ -489,9 +490,9 @@ Analyzes customer-level spending.
 
 [View Analytics SQL](sql/analytics.sql)
 
-### Screenshot
 
-![SQL Analytics](screenshots/09-sql-analytics.png)
+<img width="1717" height="916" alt="image" src="https://github.com/user-attachments/assets/a8df127f-c6f6-43ab-89eb-eeefe69a13d5" />
+
 
 ---
 
@@ -522,6 +523,9 @@ Total = ₹101,900
 ```
 
 ---
+### Screenshot
+<img width="1699" height="926" alt="image" src="https://github.com/user-attachments/assets/376f5b77-40d7-4dc3-8db8-95cd053db42a" />
+
 
 # 1️⃣3️⃣ Flask Backend
 
@@ -576,6 +580,8 @@ GET /api/revenue-by-country
 Returns revenue grouped by customer country.
 
 ---
+<img width="2170" height="725" alt="image" src="https://github.com/user-attachments/assets/609f69f3-abff-438a-b3f2-71caf2338b76" />
+
 
 # 1️⃣4️⃣ Web Dashboard
 
@@ -593,7 +599,8 @@ The dashboard communicates with the Flask API and displays the analytics.
 
 ### Dashboard Screenshot
 
-![E-Commerce Dashboard](screenshots/11-dashboard.png)
+<img width="1565" height="1005" alt="image" src="https://github.com/user-attachments/assets/c033262f-7957-473d-a5ef-839e9ea2cf79" />
+
 
 ---
 
@@ -777,6 +784,6 @@ This project demonstrates practical experience with:
 
 **Venkatesh**
 
-**Data Engineer**
+**THE END**
 
-📍 Hyderabad, India
+
