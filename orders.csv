@@ -1,0 +1,6 @@
+order_id,customer_id,order_date,order_status
+1001,1,2026-09-01,Completed
+1002,2,2026-09-02,Completed
+1003,1,2026-09-03,Cancelled
+1004,3,2026-09-04,Completed
+1005,5,2026-09-05,Completed
