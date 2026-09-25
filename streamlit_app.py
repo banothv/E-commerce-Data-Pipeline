@@ -11,7 +11,7 @@ st.set_page_config(
 st.title("🛒 E-Commerce Data Engineering Dashboard")
 st.write("E-commerce data pipeline and analytics dashboard")
 
-DATA_DIR = Path("data")
+DATA_DIR = Path(".")
 
 
 def load_csv(filename):
